@@ -38,12 +38,8 @@ ISIC 2019 (Classification)
 (Datasets are not included in the repo. Please download them from ISIC Archive
 )
 
-Contributors
-
+## Contributors
 Bhavya Devi Bhat
 
-Team Members
-
-License
-
+# License
 This project is for academic purposes.
