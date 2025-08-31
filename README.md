@@ -26,11 +26,11 @@ It uses **ResNet-based models** for classification and includes preprocessing, t
    ```bash
    git clone https://github.com/bhavyadevibhat/Skin_Lesion_Classification_and_Segmentation_Using_ResNet.git
 
-Install dependencies:
+2. Install dependencies:
 
 pip install -r requirements.txt
 
-Dataset
+## Dataset
 
 ISIC 2018 (Segmentation)
 
