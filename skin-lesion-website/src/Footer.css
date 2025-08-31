@@ -1,0 +1,100 @@
+.footer {
+  background-color: #0b1120;
+  color: #d1d5db;
+  padding: 60px 60px 60px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  max-width: 1500px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.footer-col h4 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.footer-col p,
+.footer-col li,
+.footer-col a {
+  font-size: 20px;
+  color: #d1d5db;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  color: #7dd3fc;
+}
+
+.footer-socials a {
+  margin-right: 10px;
+  color: #d1d5db;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #38bdf8;
+}
+
+.subscribe-form {
+  display: flex;
+  margin-top: 10px;
+}
+
+.subscribe-form input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.subscribe-form button {
+  background-color: #38bdf8;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.subscribe-form button:hover {
+  background-color: #0ea5e9;
+}
+
+.footer-bottom {
+  border-top: 1px solid #1f2937;
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 40px;
+  font-size: 13px;
+  color: #9ca3af;
+}
+.subscribe-form .subscribed-message {
+  background-color: #16a34a;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 0 4px 4px 0;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}

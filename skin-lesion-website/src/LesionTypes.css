@@ -1,0 +1,443 @@
+.lesion-types-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero-section1 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-section1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="10" cy="60" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="90" cy="40" r="1.5" fill="rgba(255,255,255,0.08)"/></svg>') repeat;
+  animation: Lesionfloat 20s ease-in-out infinite;
+}
+
+@keyframes Lesionfloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.hero-content1 {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* Removed the problematic left and transform properties */
+}
+
+.hero-title1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: lesionSlideInDown 1s ease-out forwards;
+  text-align: center;
+  width: 100%;
+}
+
+@keyframes lesionSlideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-description1 {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  animation: lesionFadeInUp 1s ease-out 0.3s both;
+  width: 100%;
+}
+
+@keyframes lesionFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lesion-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.category {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.category:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.category.benign {
+  border-left: 4px solid #4CAF50;
+}
+
+.category.malignant {
+  border-left: 4px solid #f44336;
+}
+
+.category h3 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.category p {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+/* Lesion Grid Section */
+.lesion-grid-section {
+  background: #f8f9fa;
+  padding: 80px 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.lesion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Lesion Cards */
+.lesion-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.lesion-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.lesion-card.active {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(102, 126, 234, 0.2);
+  border: 2px solid #667eea;
+}
+
+.card-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.lesion-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.risk-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.risk-badge.benign {
+  background: rgba(76, 175, 80, 0.9);
+}
+
+.risk-badge.benign-\(monitor-for-changes\) {
+  background: rgba(255, 193, 7, 0.9);
+}
+
+.risk-badge.precancerous {
+  background: rgba(255, 152, 0, 0.9);
+}
+
+.risk-badge.malignant-\(low-metastasis-risk\) {
+  background: rgba(244, 67, 54, 0.8);
+}
+
+.risk-badge.malignant-\(moderate-metastasis-risk\) {
+  background: rgba(244, 67, 54, 0.9);
+}
+
+.risk-badge.malignant-\(high-metastasis-risk\) {
+  background: rgba(136, 14, 79, 0.9);
+}
+
+.card-content {
+  padding: 2rem;
+}
+
+.lesion-name {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.lesion-description {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.expanded-content {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  animation: lesionSlideDown 0.3s ease-out;
+}
+
+@keyframes lesionSlideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    padding: 0 1.5rem;
+  }
+  to {
+    opacity: 1;
+    max-height: 200px;
+    padding: 1.5rem;
+  }
+}
+
+.expanded-content h4 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.expanded-content ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.expanded-content li {
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.learn-more-btn {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.learn-more-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.learn-more-btn:hover::before {
+  left: 100%;
+}
+
+.learn-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Important Note Section */
+.important-note {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  color: white;
+  padding: 3rem 2rem;
+  margin-top: 0;
+}
+
+.note-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.note-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.note-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0;
+  opacity: 0.95;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title1 {
+    font-size: 2.5rem;
+  }
+  
+  .lesion-categories {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .category {
+    padding: 1.5rem;
+  }
+  
+  .lesion-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .lesion-card {
+    margin: 0 10px;
+  }
+  
+  .hero-section1 {
+    padding: 60px 15px;
+  }
+  
+  .lesion-grid-section {
+    padding: 60px 15px;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title1 {
+    font-size: 2rem;
+  }
+  
+  .card-content {
+    padding: 1.5rem;
+  }
+  
+  .lesion-name {
+    font-size: 1.2rem;
+  }
+  
+  .important-note {
+    padding: 2rem 1rem;
+  }
+  
+  .note-content h3 {
+    font-size: 1.2rem;
+    flex-direction: column;
+    gap: 5px;
+  }
+}

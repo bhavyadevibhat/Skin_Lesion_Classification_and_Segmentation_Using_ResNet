@@ -1,0 +1,378 @@
+/* Enhanced How It Works Section */
+.how-it-works-section {
+  padding: 120px 40px;
+  text-align: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.how-it-works-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="grad1" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:rgba(79,70,229,0.05);stop-opacity:1" /><stop offset="100%" style="stop-color:rgba(79,70,229,0);stop-opacity:1" /></radialGradient></defs><circle cx="20" cy="20" r="3" fill="url(%23grad1)"/><circle cx="80" cy="80" r="3" fill="url(%23grad1)"/><circle cx="50" cy="10" r="2" fill="rgba(79,70,229,0.03)"/><circle cx="10" cy="70" r="2" fill="rgba(79,70,229,0.03)"/><circle cx="90" cy="30" r="2" fill="rgba(79,70,229,0.03)"/></svg>') repeat;
+  animation: backgroundFloat 25s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes backgroundFloat {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-10px) translateX(5px); }
+  50% { transform: translateY(5px) translateX(-5px); }
+  75% { transform: translateY(-5px) translateX(10px); }
+}
+
+.section-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #1e293b, #4f46e5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 1;
+  animation: titleSlideIn 1s ease-out;
+}
+
+@keyframes titleSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  border-radius: 2px;
+  animation: underlineGrow 1s ease-out 0.5s both;
+}
+
+@keyframes underlineGrow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100px;
+  }
+}
+
+.section-subtitle {
+  font-size: 22px;
+  color: #64748b;
+  margin-bottom: 60px;
+  max-width: 700px;
+  margin-inline: auto;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+  animation: subtitleFadeIn 1s ease-out 0.3s both;
+}
+
+@keyframes subtitleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.steps-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced Step Cards */
+.step-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 32px 24px;
+  width: 320px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  animation: cardSlideUp 0.8s ease-out both;
+}
+
+.step-card:nth-child(1) { animation-delay: 0.2s; }
+.step-card:nth-child(2) { animation-delay: 0.4s; }
+.step-card:nth-child(3) { animation-delay: 0.6s; }
+.step-card:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes cardSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.step-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.02), rgba(124, 58, 237, 0.02));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 24px;
+}
+
+.step-card:hover::before {
+  opacity: 1;
+}
+
+.step-card:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 25px 60px rgba(79, 70, 229, 0.15);
+  border-color: rgba(79, 70, 229, 0.2);
+}
+
+.step-card:active {
+  transform: translateY(-10px) scale(1.01);
+}
+
+.step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced Step Number */
+.step-number {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  display: inline-block;
+  font-size: 18px;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.step-number::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s;
+}
+
+.step-card:hover .step-number {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+}
+
+.step-card:hover .step-number::before {
+  left: 100%;
+}
+
+/* Enhanced Step Icon */
+.step-icon {
+  font-size: 48px;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.step-card:hover .step-icon {
+  transform: scale(1.1) rotateY(15deg);
+  filter: drop-shadow(0 4px 8px rgba(79, 70, 229, 0.2));
+}
+
+.step-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1e293b;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.step-card:hover .step-title {
+  color: #4f46e5;
+}
+
+.step-desc {
+  font-size: 16px;
+  color: #64748b;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.step-card:hover .step-desc {
+  color: #475569;
+}
+
+/* Enhanced Step Image */
+.step-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.step-card:hover .step-image {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+}
+
+/* Connection Lines Between Cards (Optional Enhancement) */
+.steps-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e2e8f0, #e2e8f0, transparent);
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* Pulse Animation for Step Numbers */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(79, 70, 229, 0.5);
+  }
+}
+
+.step-number {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.step-card:hover .step-number {
+  animation: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .steps-container {
+    gap: 40px;
+  }
+  
+  .steps-container::before {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .how-it-works-section {
+    padding: 80px 20px;
+  }
+  
+  .section-title {
+    font-size: 36px;
+  }
+  
+  .section-subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  
+  .steps-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .step-card {
+    width: 100%;
+    max-width: 350px;
+    padding: 24px 20px;
+  }
+  
+  .step-card:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .section-subtitle {
+    font-size: 16px;
+  }
+  
+  .step-card {
+    padding: 20px 16px;
+  }
+  
+  .step-icon {
+    font-size: 40px;
+  }
+  
+  .step-title {
+    font-size: 18px;
+  }
+  
+  .step-image {
+    height: 140px;
+  }
+}
+
+/* Focus states for accessibility */
+.step-card:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+  transform: translateY(-5px);
+}
+
+/* Smooth scrolling behavior */
+.step-card {
+  scroll-margin-top: 100px;
+}
