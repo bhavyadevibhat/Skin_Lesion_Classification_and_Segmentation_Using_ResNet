@@ -1,0 +1,12 @@
+numpy
+pandas
+scikit-learn
+scikit-image
+matplotlib
+seaborn
+opencv-python
+Pillow
+jupyter
+notebook
+tqdm
+tensorflow==2.15.0   # or use PyTorch instead
