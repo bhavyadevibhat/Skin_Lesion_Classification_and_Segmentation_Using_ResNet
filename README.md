@@ -43,19 +43,17 @@ ISIC 2019 (Classification)
 
 We experimented with multiple deep learning architectures for skin lesion classification. Below are the brief results obtained:
 
-Classification (ISIC 2019)
-Model	    Validation Accuracy	                    Remarks
-ResNet50	    ~50% (AUC ~0.73)	   Multi-label setup struggled due to class imbalance.
-ResNet101	        80%	              Achieved the best performance among classifiers.
-ResNet152	        75%	              Slightly lower than ResNet101,likely due to overfitting.
+For the classification task on the ISIC 2019 dataset, three ResNet variants were evaluated.
 
-Segmentation (ISIC 2018)
+ResNet50 achieved around 50% validation accuracy (macro AUC ~0.73). However, it struggled in the multi-label setup due to the severe class imbalance in the dataset, where certain classes dominated the training samples.
 
-Model	Validation Accuracy	                 Remarks
-U-Net	    90%	                    Effectively segmented skin lesion regions.
+ResNet101 performed the best among the classification models, reaching 80% validation accuracy. The deeper architecture allowed it to learn more discriminative features, leading to better generalization across skin lesion categories.
 
-✅ Best classifier: ResNet101 (80%)
-✅ Best segmentation model: U-Net (90%)
+ResNet152 achieved about 75% validation accuracy, which is slightly lower than ResNet101. The model tended to overfit during training, likely due to its higher complexity and the limited number of balanced samples.
+
+For the segmentation task on the ISIC 2018 dataset, the U-Net model was employed. U-Net achieved 90% validation accuracy, effectively capturing lesion boundaries and producing precise segmentation masks. Its encoder–decoder architecture with skip connections helped preserve spatial details, making it highly suitable for medical image segmentation.
+
+Overall, U-Net delivered excellent results in lesion segmentation, while ResNet101 stood out as the most effective model for classification.
 
 
 ## Contributors
